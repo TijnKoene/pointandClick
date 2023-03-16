@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Website Login Page</title>
+  </head>
+  <body>
+    <h1>Website Page</h1>
+    <p>Enter your name:</p>
+    <input type="text" id="name-input">
+    <button id="Login-button">Login</button>
+    <p id="greeting" class="hidden"></p>
+    <script>
+          const greetingPrefix = "Welcome to this site, ";
+      let name;
+      function handleInput() {
+        name = document.getElementById("name-input").value;
+      }
+      
+      function handleLogin() {
+        handleInput();
+        if (!name) {
+          document.getElementById("name-input").classList.add("error");
+          return;
+        }
+        const greeting = document.createElement("span");
+        greeting.innerText = greetingPrefix + name + "!";
+        document.getElementById("greeting").innerHTML = "";
+        document.getElementById("greeting").appendChild(greeting);
+        document.getElementById("greeting").classList.toggle("hidden");
+      }
+      document.getElementById("name-input").addEventListener("input", handleInput);
+      document.getElementById("Login-button").addEventListener("click", handleLogin);
+    </script>
+  </body>
+</html>

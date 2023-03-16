@@ -1,0 +1,1 @@
+document.getElementByIdI("MainTitle").innerText = "PointandClick Game"
